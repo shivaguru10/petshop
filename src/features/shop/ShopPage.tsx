@@ -14,7 +14,7 @@ export function ShopPage({
   const activeCategory = categories.find((item) => item.name === category);
 
   return (
-    <div className="bg-[#FAFAF9]">
+    <div className="min-w-0 bg-[#FAFAF9]">
       <section className="container-page py-8 max-md:py-4">
         <div className="relative overflow-hidden rounded-lg bg-[#EEF5EE] px-6 py-8 text-[#0B3221] md:px-10 max-md:px-4 max-md:py-5">
           {activeCategory ? (
@@ -69,7 +69,7 @@ export function ShopPage({
           </div>
         </aside>
 
-        <section>
+        <section className="min-w-0">
           <div className="mb-5 flex flex-col gap-4 rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] p-4 md:flex-row md:items-center md:justify-between max-md:mb-4 max-md:gap-3 max-md:p-3">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.14em] text-[#4F4F4F] max-md:text-[0.65rem]">

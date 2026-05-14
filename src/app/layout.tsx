@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Blits Pets | Pet Food, Medicine & Accessories",
   description:
     "Shop dog food, bird supplies, hamster care, pet medicine, leashes, collars, bowls, toys, and cages at Blits Pets.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
