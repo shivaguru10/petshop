@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/product";
-import { getDiscountedPrice } from "@/lib/catalog";
+import { getDiscountedPrice, isLivePetCategory } from "@/lib/catalog";
 import { useCart } from "@/features/cart/CartProvider";
 import { useWishlist } from "@/features/wishlist/WishlistProvider";
 
@@ -17,6 +17,7 @@ export function ProductCard({
   const { addItem } = useCart();
   const wishlist = useWishlist();
   const price = getDiscountedPrice(product);
+  const showBrand = !isLivePetCategory(product.category);
 
   return (
     <article className="group overflow-hidden rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] transition hover:-translate-y-1 hover:bg-[#F3F6F4] hover:shadow-[0_18px_40px_#E8ECE8]">
@@ -47,9 +48,11 @@ export function ProductCard({
       <div className={variant === "related" ? "grid gap-1.5 p-2.5 md:gap-2 md:p-3" : "grid gap-2 p-3"}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className={variant === "related" ? "truncate text-[0.66rem] font-black uppercase tracking-[0.02em] text-[#1F1F1F] md:text-sm md:tracking-[0.08em]" : "truncate text-sm font-black uppercase tracking-[0.08em] text-[#1F1F1F]"}>
-              {product.brand}
-            </h3>
+            {showBrand ? (
+              <h3 className={variant === "related" ? "truncate text-[0.66rem] font-black uppercase tracking-[0.02em] text-[#1F1F1F] md:text-sm md:tracking-[0.08em]" : "truncate text-sm font-black uppercase tracking-[0.08em] text-[#1F1F1F]"}>
+                {product.brand}
+              </h3>
+            ) : null}
             <p className={variant === "related" ? "line-clamp-2 min-h-[2.2rem] text-[0.76rem] leading-[1.1rem] text-[#4F4F4F] md:min-h-[2.5rem] md:text-sm md:leading-normal" : "line-clamp-2 min-h-[2.5rem] text-sm text-[#4F4F4F]"}>
               {product.name}
             </p>

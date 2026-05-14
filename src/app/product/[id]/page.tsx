@@ -3,7 +3,12 @@ import { notFound } from "next/navigation";
 import { BackButton } from "@/components/common/BackButton";
 import { StorefrontShell } from "@/components/layout/StorefrontShell";
 import { ProductGrid } from "@/components/product/ProductGrid";
-import { getDiscountedPrice, getProductById, products } from "@/lib/catalog";
+import {
+  getDiscountedPrice,
+  getProductById,
+  isLivePetCategory,
+  products,
+} from "@/lib/catalog";
 import { ProductActions } from "./product-actions";
 
 export default async function Page({
@@ -19,8 +24,9 @@ export default async function Page({
     .filter((item) => item.category === product.category && item.id !== product.id)
     .slice(0, 4);
   const price = getDiscountedPrice(product);
+  const isLivePet = isLivePetCategory(product.category);
   const detailItems =
-    ["Dogs", "Birds", "Cats"].includes(product.category)
+    isLivePet
       ? [
           ["Category", product.category],
           ["Type", product.material],
@@ -74,7 +80,11 @@ export default async function Page({
                 {product.category}
               </p>
               <h1 className="text-[clamp(2rem,3.2vw,3.35rem)] font-black leading-none max-md:text-[1.65rem] max-md:leading-[1.03]">{product.name}</h1>
-              <h2 className="mt-2 text-base font-bold text-[#4F4F4F] max-md:text-sm">by {product.brand}</h2>
+              {isLivePet ? null : (
+                <h2 className="mt-2 text-base font-bold text-[#4F4F4F] max-md:text-sm">
+                  by {product.brand}
+                </h2>
+              )}
             </div>
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <strong className="text-3xl max-md:text-2xl">Rs. {price.toLocaleString("en-IN")}</strong>

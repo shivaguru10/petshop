@@ -1,5 +1,11 @@
 import type { Category, Product } from "@/types/product";
 
+const livePetCategories: Category[] = ["Dogs", "Birds", "Cats"];
+
+export function isLivePetCategory(category: Category) {
+  return livePetCategories.includes(category);
+}
+
 const images = {
   labrador:
     "https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=900&auto=format&fit=crop",

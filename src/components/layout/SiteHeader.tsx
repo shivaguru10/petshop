@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { categories, filterProducts } from "@/lib/catalog";
+import { categories, filterProducts, isLivePetCategory } from "@/lib/catalog";
 import { useCart } from "@/features/cart/CartProvider";
 import { useWishlist } from "@/features/wishlist/WishlistProvider";
 import type { Product } from "@/types/product";
@@ -317,7 +317,9 @@ function SearchBox({
                       {product.name}
                     </span>
                     <span className="mt-0.5 block truncate text-xs font-semibold text-[#4F4F4F]">
-                      {product.brand} - {product.category}
+                      {isLivePetCategory(product.category)
+                        ? product.category
+                        : `${product.brand} - ${product.category}`}
                     </span>
                   </span>
                 </Link>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BackButton } from "@/components/common/BackButton";
-import { getDiscountedPrice } from "@/lib/catalog";
+import { getDiscountedPrice, isLivePetCategory } from "@/lib/catalog";
 import { useCart } from "./CartProvider";
 
 export function CartPage() {
@@ -82,9 +82,11 @@ export function CartPage() {
               </div>
               <div className="flex flex-col justify-between max-md:contents">
                 <div className="max-md:col-start-2">
-                  <h2 className="mb-1.5 text-base font-bold uppercase tracking-[0.1em]">
-                    {item.brand}
-                  </h2>
+                  {isLivePetCategory(item.category) ? null : (
+                    <h2 className="mb-1.5 text-base font-bold uppercase tracking-[0.1em]">
+                      {item.brand}
+                    </h2>
+                  )}
                   <p className="mb-4 text-xl text-[#4F4F4F]">{item.name}</p>
                   <p className="text-sm font-medium text-[#4F4F4F]">
                     Option: <span className="text-[#0B3221]">{item.variant}</span>
