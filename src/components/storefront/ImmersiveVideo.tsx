@@ -32,15 +32,15 @@ export function ImmersiveVideo() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center brightness-[0.88] contrast-[0.96] saturate-[0.92]" />
       ) : null}
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,50,28,0.74)_0%,rgba(0,50,28,0.3)_48%,rgba(0,50,28,0.58)_100%)]" />
-      <div className="container-page relative z-10 flex justify-end">
+      <div className="container-page pointer-events-none absolute inset-0 z-10 flex items-end justify-end py-6 max-md:py-4">
         <button
           type="button"
-          className="grid h-16 w-16 place-items-center rounded-full border border-white/55 bg-white/5 backdrop-blur-sm transition hover:scale-105"
+          className="pointer-events-auto grid h-11 w-11 place-items-center rounded-full border border-white/45 bg-[#00321C]/45 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:scale-105 hover:bg-[#00321C]/70 max-md:h-9 max-md:w-9"
           onClick={() => setPaused((value) => !value)}
           aria-label={paused ? "Play pet shop video" : "Pause pet shop video"}
           aria-pressed={!paused}
         >
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+          <svg viewBox="0 0 24 24" className="h-4 w-4 max-md:h-3.5 max-md:w-3.5" fill="currentColor" aria-hidden="true">
             {paused ? (
               <path d="M8 5v14l11-7z" />
             ) : (
