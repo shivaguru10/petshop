@@ -60,28 +60,27 @@ a {
   }
 }
 
-@media screen and (max-device-width: 600px) {
+@media (max-width: 640px) {
   html,
   body {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
   }
 
   .container-page {
-    max-width: 100vw;
+    max-width: 100%;
     padding-inline: 14px;
   }
 
   .shop-page {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
   }
 
-  .shop-filter {
-    margin-inline: 0;
-    padding-inline: 0;
-    position: static;
+  .shop-mobile-filter {
+    width: 100%;
+    min-width: 0;
   }
 
   .shop-product-grid {
