@@ -63,13 +63,13 @@ export const subcategoryShowcases: Record<Category, ShowcaseItem[]> = {
   Accessories: [
     { name: "Leashes", image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=700&auto=format&fit=crop" },
     { name: "Collars", image: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?q=80&w=700&auto=format&fit=crop" },
-    { name: "Feeding Bowls", image: "https://images.unsplash.com/photo-1601758124096-1fd661873b50?q=80&w=700&auto=format&fit=crop" },
-    { name: "Toys", image: "https://images.unsplash.com/photo-1600369672770-985fd30004eb?q=80&w=700&auto=format&fit=crop" },
+    { name: "Harness", image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=700&auto=format&fit=crop" },
+    { name: "Pet Bed", image: "https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=700&auto=format&fit=crop" },
   ],
   Cages: [
-    { name: "Dog Cages", image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=700&auto=format&fit=crop" },
+    { name: "Dog Cages", image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=700&auto=format&fit=crop" },
     { name: "Bird Cages", image: "https://images.unsplash.com/photo-1552728089-57bdde30beb3?q=80&w=700&auto=format&fit=crop" },
-    { name: "Hamster Cages", image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=700&auto=format&fit=crop" },
+    { name: "Rabbit Cage", image: "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=700&auto=format&fit=crop" },
     { name: "Travel Carriers", image: "https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?q=80&w=700&auto=format&fit=crop" },
   ],
 };

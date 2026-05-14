@@ -75,10 +75,28 @@ const images = {
     "https://images.unsplash.com/photo-1601758124096-1fd661873b50?q=80&w=900&auto=format&fit=crop",
   toy:
     "https://images.unsplash.com/photo-1600369672770-985fd30004eb?q=80&w=900&auto=format&fit=crop",
+  harness:
+    "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=900&auto=format&fit=crop",
+  groomingBrush:
+    "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=900&auto=format&fit=crop",
+  petBed:
+    "https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=900&auto=format&fit=crop",
+  wasteBags:
+    "https://images.unsplash.com/photo-1601758063541-d2f50b4aafb2?q=80&w=900&auto=format&fit=crop",
   dogCage:
-    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=900&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=900&auto=format&fit=crop",
+  birdCage:
+    "https://images.unsplash.com/photo-1552728089-57bdde30beb3?q=80&w=900&auto=format&fit=crop",
+  hamsterCage:
+    "https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=900&auto=format&fit=crop",
   carrier:
     "https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?q=80&w=900&auto=format&fit=crop",
+  catCarrier:
+    "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=900&auto=format&fit=crop",
+  rabbitCage:
+    "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=900&auto=format&fit=crop",
+  kennelHouse:
+    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=900&auto=format&fit=crop",
 };
 
 export const categories: { name: Category; image: string; icon: string }[] = [
@@ -89,7 +107,7 @@ export const categories: { name: Category; image: string; icon: string }[] = [
   { name: "Bird Supplies", image: images.bird, icon: "bird" },
   { name: "Hamster Care", image: images.hamster, icon: "spark" },
   { name: "Pet Medicine", image: images.medicine, icon: "plus" },
-  { name: "Accessories", image: images.leash, icon: "leash" },
+  { name: "Accessories", image: images.harness, icon: "leash" },
   { name: "Cages", image: images.dogCage, icon: "home" },
 ];
 
@@ -565,6 +583,60 @@ export const products: Product[] = [
     options: ["Small", "Medium", "Large", "Toys"],
   },
   {
+    id: "trixie-premium-harness",
+    name: "Trixie Premium Dog Harness",
+    brand: "Trixie",
+    category: "Accessories",
+    material: "Adjustable nylon harness",
+    price: 899,
+    discount: 10,
+    image: images.harness,
+    description:
+      "Comfortable adjustable harness for safer daily walks and better control than a collar alone.",
+    isTrending: true,
+    options: ["Small", "Medium", "Large", "Harness"],
+  },
+  {
+    id: "hertzko-slicker-brush",
+    name: "Hertzko Slicker Grooming Brush",
+    brand: "Hertzko",
+    category: "Accessories",
+    material: "Grooming brush",
+    price: 699,
+    discount: 8,
+    image: images.groomingBrush,
+    description:
+      "Slicker brush for removing loose fur, light tangles, and everyday coat maintenance.",
+    options: ["Small pets", "Dogs", "Cats", "Grooming"],
+  },
+  {
+    id: "m-pets-soft-pet-bed",
+    name: "M-Pets Soft Pet Bed",
+    brand: "M-Pets",
+    category: "Accessories",
+    material: "Washable soft fabric",
+    price: 1899,
+    discount: 12,
+    image: images.petBed,
+    description:
+      "Soft washable bed for dogs and cats with cushioned edges for relaxed daily resting.",
+    isNewArrival: true,
+    options: ["Small", "Medium", "Large", "Pet Bed"],
+  },
+  {
+    id: "earth-rated-waste-bags",
+    name: "Earth Rated Waste Bags",
+    brand: "Earth Rated",
+    category: "Accessories",
+    material: "Leak-resistant bags",
+    price: 299,
+    discount: 5,
+    image: images.wasteBags,
+    description:
+      "Leak-resistant waste bags for clean dog walks, travel kits, and everyday outdoor care.",
+    options: ["Roll", "Pack of 8", "Walk Essentials"],
+  },
+  {
     id: "savic-dog-residence",
     name: "Savic Dog Residence Cage",
     brand: "Savic",
@@ -572,7 +644,7 @@ export const products: Product[] = [
     material: "Powder-coated metal",
     price: 4999,
     discount: 18,
-    image: images.carrier,
+    image: images.dogCage,
     description:
       "Foldable dog cage with tray and secure latch for home training or travel.",
     isNewArrival: true,
@@ -586,7 +658,7 @@ export const products: Product[] = [
     material: "Metal wire cage",
     price: 2799,
     discount: 16,
-    image: images.bird,
+    image: images.birdCage,
     description:
       "Bird cage with perches, feeding cups, and a removable cleaning tray.",
     isBestSeller: true,
@@ -600,7 +672,7 @@ export const products: Product[] = [
     material: "Plastic and wire cage",
     price: 2199,
     discount: 14,
-    image: images.smallPet,
+    image: images.hamsterCage,
     description:
       "Compact hamster cage with ventilation, bedding depth, and starter accessories.",
     isTrending: true,
@@ -614,10 +686,64 @@ export const products: Product[] = [
     material: "Ventilated plastic",
     price: 1599,
     discount: 12,
-    image: images.dogCage,
+    image: images.carrier,
     description:
       "Lightweight pet carrier with ventilation, handle, and secure closure for short trips.",
     options: ["Small", "Medium", "Travel Carriers"],
+  },
+  {
+    id: "ferplast-cat-atlas-carrier",
+    name: "Ferplast Atlas Cat Carrier",
+    brand: "Ferplast",
+    category: "Cages",
+    material: "Ventilated plastic carrier",
+    price: 1899,
+    discount: 10,
+    image: images.catCarrier,
+    description:
+      "Secure cat carrier with ventilation slots, easy-grip handle, and front door access.",
+    isNewArrival: true,
+    options: ["Small", "Medium", "Cat Carrier"],
+  },
+  {
+    id: "living-world-rabbit-cage",
+    name: "Living World Rabbit Cage",
+    brand: "Living World",
+    category: "Cages",
+    material: "Wire and plastic base",
+    price: 3899,
+    discount: 13,
+    image: images.rabbitCage,
+    description:
+      "Roomy small-animal cage with a deep base for bedding and easy daily cleaning.",
+    options: ["Standard", "Large", "Rabbit Cage"],
+  },
+  {
+    id: "trixie-wooden-kennel",
+    name: "Trixie Wooden Dog Kennel",
+    brand: "Trixie",
+    category: "Cages",
+    material: "Weather-treated wood",
+    price: 7499,
+    discount: 15,
+    image: images.kennelHouse,
+    description:
+      "Outdoor wooden kennel house for sheltered rest, with raised flooring and a sloped roof.",
+    isTrending: true,
+    options: ["Medium", "Large", "Kennel House"],
+  },
+  {
+    id: "savic-small-pet-transport-box",
+    name: "Savic Small Pet Transport Box",
+    brand: "Savic",
+    category: "Cages",
+    material: "Compact ventilated carrier",
+    price: 899,
+    discount: 8,
+    image: images.hamsterCage,
+    description:
+      "Compact transport box for hamsters and small pets during short trips or vet visits.",
+    options: ["Small", "Medium", "Small Pet Carrier"],
   },
 ];
 
