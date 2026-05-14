@@ -21,7 +21,7 @@ export function ProductGrid({
     <div
       className={
         variant === "related"
-          ? "grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4"
+          ? "flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:pb-0 xl:grid-cols-4 [&>article]:w-[150px] [&>article]:shrink-0 md:[&>article]:w-auto"
           : "shop-product-grid grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
       }
     >
