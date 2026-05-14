@@ -15,10 +15,10 @@ export function CartPage() {
 
   if (!items.length) {
     return (
-      <div className="container-page grid min-h-[60vh] place-items-center py-16 text-center">
-        <div>
-          <BackButton fallback="/shop" />
-          <div className="mx-auto grid h-28 w-28 place-items-center rounded-full bg-[#EEF5EE] text-[#0B3221]">
+      <div className="container-page min-h-[60vh] py-10 max-md:py-5">
+        <BackButton fallback="/shop" className="max-md:mb-5" />
+        <div className="mx-auto max-w-md text-center max-md:pt-2">
+          <div className="mx-auto grid h-28 w-28 place-items-center rounded-full bg-[#EEF5EE] text-[#0B3221] max-md:h-20 max-md:w-20">
             <svg viewBox="0 0 180 150" className="h-20 w-20" aria-hidden="true">
               <path
                 d="M38 106h94c11 0 20-9 20-20V43H56l-5-18H28"
@@ -39,8 +39,10 @@ export function CartPage() {
               <circle cx="128" cy="124" r="10" fill="currentColor" />
             </svg>
           </div>
-          <h1 className="mt-6 text-3xl font-black">Your Bag is Empty</h1>
-          <p className="mt-2 text-[#4F4F4F]">
+          <h1 className="mt-6 text-3xl font-black max-md:mt-4 max-md:text-2xl">
+            Your Bag is Empty
+          </h1>
+          <p className="mt-2 text-[#4F4F4F] max-md:text-sm">
             Add pet food, medicine, cages, or accessories to get started.
           </p>
           <Link href="/shop" className="brand-button mt-7 inline-block">

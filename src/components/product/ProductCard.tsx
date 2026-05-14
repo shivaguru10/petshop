@@ -23,10 +23,10 @@ export function ProductCard({
       <Link href={`/product/${product.id}`} className="block">
         <div
           className={`relative overflow-hidden bg-[#FDFEFD] ${
-            variant === "related" ? "aspect-square md:aspect-[4/5]" : "aspect-[4/5]"
+            variant === "related" ? "aspect-[4/3] md:aspect-[4/5]" : "aspect-[4/5]"
           }`}
         >
-          <div className="absolute left-3 top-3 z-10 grid gap-2">
+          <div className="absolute left-2 top-2 z-10 grid gap-2 md:left-3 md:top-3">
             {product.isBestSeller ? <Badge>Best Seller</Badge> : null}
             {product.isNewArrival ? <Badge>New</Badge> : null}
             {product.isTrending ? <Badge>Trending</Badge> : null}
@@ -44,13 +44,13 @@ export function ProductCard({
         </div>
       </Link>
 
-      <div className={variant === "related" ? "grid gap-1.5 p-2 md:gap-2 md:p-3" : "grid gap-2 p-3"}>
+      <div className={variant === "related" ? "grid gap-1.5 p-2.5 md:gap-2 md:p-3" : "grid gap-2 p-3"}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className={variant === "related" ? "truncate text-[0.68rem] font-black uppercase tracking-[0.04em] text-[#1F1F1F] md:text-sm md:tracking-[0.08em]" : "truncate text-sm font-black uppercase tracking-[0.08em] text-[#1F1F1F]"}>
+            <h3 className={variant === "related" ? "truncate text-[0.66rem] font-black uppercase tracking-[0.02em] text-[#1F1F1F] md:text-sm md:tracking-[0.08em]" : "truncate text-sm font-black uppercase tracking-[0.08em] text-[#1F1F1F]"}>
               {product.brand}
             </h3>
-            <p className={variant === "related" ? "line-clamp-2 min-h-[2rem] text-[0.7rem] leading-4 text-[#4F4F4F] md:min-h-[2.5rem] md:text-sm md:leading-normal" : "line-clamp-2 min-h-[2.5rem] text-sm text-[#4F4F4F]"}>
+            <p className={variant === "related" ? "line-clamp-2 min-h-[2.2rem] text-[0.76rem] leading-[1.1rem] text-[#4F4F4F] md:min-h-[2.5rem] md:text-sm md:leading-normal" : "line-clamp-2 min-h-[2.5rem] text-sm text-[#4F4F4F]"}>
               {product.name}
             </p>
           </div>
@@ -63,7 +63,7 @@ export function ProductCard({
             <HeartIcon filled={wishlist.has(product.id)} />
           </button>
         </div>
-        <div className={variant === "related" ? "flex flex-wrap items-baseline gap-1 text-[0.72rem] md:gap-2 md:text-sm" : "flex flex-wrap items-baseline gap-2 text-sm"}>
+        <div className={variant === "related" ? "flex flex-wrap items-baseline gap-1 text-[0.78rem] md:gap-2 md:text-sm" : "flex flex-wrap items-baseline gap-2 text-sm"}>
           <strong>Rs. {price.toLocaleString("en-IN")}</strong>
           {product.discount ? (
             <span className="text-xs text-[#4F4F4F] line-through">
@@ -74,7 +74,7 @@ export function ProductCard({
         <div className={variant === "related" ? "mt-1 grid grid-cols-1 gap-2 md:block" : "mt-1 grid grid-cols-2 gap-2 md:block"}>
           <button
             type="button"
-            className={variant === "related" ? "min-h-8 rounded-full bg-[#057429] px-2 text-[0.62rem] font-black uppercase tracking-[0.04em] text-white transition hover:bg-[#006020] md:min-h-9 md:w-full md:rounded-lg md:py-2 md:text-xs md:tracking-[0.12em]" : "min-h-9 rounded-full bg-[#057429] px-3 text-[0.68rem] font-black uppercase tracking-[0.08em] text-white transition hover:bg-[#006020] md:w-full md:rounded-lg md:py-2 md:text-xs md:tracking-[0.12em]"}
+            className={variant === "related" ? "min-h-8 rounded-full bg-[#057429] px-2 text-[0.66rem] font-black uppercase tracking-[0.04em] text-white transition hover:bg-[#006020] md:min-h-9 md:w-full md:rounded-lg md:py-2 md:text-xs md:tracking-[0.12em]" : "min-h-9 rounded-full bg-[#057429] px-3 text-[0.68rem] font-black uppercase tracking-[0.08em] text-white transition hover:bg-[#006020] md:w-full md:rounded-lg md:py-2 md:text-xs md:tracking-[0.12em]"}
             onClick={() => addItem(product)}
           >
             Add
@@ -94,7 +94,7 @@ export function ProductCard({
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="w-max rounded-full bg-[#FFFFFF] px-2 py-1 text-[0.62rem] font-black uppercase tracking-[0.1em] text-[#145615] shadow-sm">
+    <span className="w-max rounded-full bg-[#FFFFFF] px-2 py-1 text-[0.55rem] font-black uppercase tracking-[0.06em] text-[#145615] shadow-sm md:text-[0.62rem] md:tracking-[0.1em]">
       {children}
     </span>
   );

@@ -21,7 +21,7 @@ export function ProductGrid({
     <div
       className={
         variant === "related"
-          ? "grid grid-cols-3 gap-2 md:grid-cols-2 md:gap-4 xl:grid-cols-4"
+          ? "grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4"
           : "grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4"
       }
     >

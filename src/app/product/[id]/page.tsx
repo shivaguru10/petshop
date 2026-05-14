@@ -36,15 +36,15 @@ export default async function Page({
 
   return (
     <StorefrontShell>
-      <article className="overflow-hidden bg-[#FAFAF9] py-8 max-md:py-4">
+      <article className="overflow-hidden bg-[#FAFAF9] py-8 max-md:py-0">
         <div className="container-page max-md:hidden">
           <BackButton
             fallback={`/shop?category=${encodeURIComponent(product.category)}`}
           />
         </div>
-        <div className="mx-auto grid max-w-[1280px] items-start gap-[34px] px-9 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] max-lg:grid-cols-1 max-lg:px-10 max-md:gap-4 max-md:px-4">
-          <div className="grid gap-4 max-md:gap-3">
-            <div className="sticky top-[108px] z-10 grid min-h-[520px] place-items-center overflow-hidden rounded-lg border border-[#E6EAE6] bg-[#EEF5EE] shadow-[0_22px_70px_#E8ECE8] max-lg:static max-lg:aspect-[16/10] max-lg:min-h-0 max-md:relative max-md:h-[240px] max-md:aspect-auto max-md:w-full max-md:shadow-sm">
+        <div className="mx-auto grid max-w-[1280px] items-start gap-[34px] px-9 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] max-lg:grid-cols-1 max-lg:px-10 max-md:gap-3 max-md:px-0">
+          <div className="grid gap-4 max-md:gap-0">
+            <div className="sticky top-[108px] z-10 grid min-h-[520px] place-items-center overflow-hidden rounded-lg border border-[#E6EAE6] bg-[#EEF5EE] shadow-[0_22px_70px_#E8ECE8] max-lg:static max-lg:aspect-[16/10] max-lg:min-h-0 max-md:relative max-md:h-[218px] max-md:aspect-auto max-md:w-full max-md:rounded-none max-md:border-x-0 max-md:border-t-0 max-md:shadow-none">
               <BackButton
                 fallback={`/shop?category=${encodeURIComponent(product.category)}`}
                 className="absolute left-3 top-3 z-20 mb-0 min-h-8 bg-white/95 px-3 text-[0.64rem] shadow-md md:hidden [&>span]:h-5 [&>span]:w-5"
@@ -57,7 +57,7 @@ export default async function Page({
                 className="object-cover transition duration-700 hover:scale-[1.025]"
               />
             </div>
-            <div className="relative z-0 rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] p-4 max-md:p-3">
+            <div className="relative z-0 rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] p-4 max-md:mx-4 max-md:mt-3 max-md:p-3">
               <strong className="text-xs uppercase tracking-[0.12em]">
                 Pet-care delivery
               </strong>
@@ -68,7 +68,7 @@ export default async function Page({
             </div>
           </div>
 
-          <div className="sticky top-[108px] rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] p-7 shadow-[0_22px_70px_#E8ECE8] max-lg:static max-md:p-4 max-md:shadow-sm">
+          <div className="sticky top-[108px] rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] p-7 shadow-[0_22px_70px_#E8ECE8] max-lg:static max-md:mx-4 max-md:p-4 max-md:shadow-sm">
             <div className="mb-5 border-b border-[#DDE6DD] pb-5">
               <p className="mb-3 w-max text-xs font-black uppercase tracking-[0.16em] text-[#145615] max-md:text-[0.68rem]">
                 {product.category}
@@ -121,8 +121,8 @@ export default async function Page({
             </div>
           </div>
         </div>
-        <section className="mx-auto mt-14 max-w-[1280px] px-9 max-md:mt-10 max-md:px-5">
-          <div className="mb-7">
+        <section className="mx-auto mt-14 max-w-[1280px] px-9 max-md:mt-8 max-md:px-4">
+          <div className="mb-5">
             <p className="section-kicker">Related Products</p>
             <h2 className="mt-2 text-3xl font-black max-md:text-2xl">Complete This Pet Kit</h2>
           </div>
