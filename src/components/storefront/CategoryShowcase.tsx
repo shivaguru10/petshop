@@ -10,20 +10,22 @@ const specialCategories = new Set(["Pet Medicine", "Accessories", "Cages"]);
 
 export function CategoryShowcase() {
   return (
-    <section className="container-page py-10">
-      <div className="mb-8 flex flex-col gap-2">
+    <section className="container-page overflow-hidden py-10 max-md:py-8">
+      <div className="mb-8 flex flex-col gap-2 max-md:mb-6">
         <p className="section-kicker">Shop by need</p>
-        <h2 className="text-3xl font-black">Find the right shelf fast</h2>
+        <h2 className="text-3xl font-black max-md:text-2xl">
+          Find the right shelf fast
+        </h2>
       </div>
-      <div className="grid gap-10">
+      <div className="grid gap-10 max-md:gap-8">
         {showcaseCategories.map((category) => {
           const isSpecial = specialCategories.has(category);
           const items = subcategoryShowcases[category];
 
           return (
-            <section key={category}>
-              <div className="mb-4 flex items-end justify-between gap-4">
-                <div>
+            <section key={category} className="min-w-0 overflow-hidden">
+              <div className="mb-4 flex items-end justify-between gap-4 max-md:mb-3">
+                <div className="min-w-0">
                   {isSpecial ? null : (
                     <p className="section-kicker">{category.toUpperCase()}</p>
                   )}
@@ -31,7 +33,7 @@ export function CategoryShowcase() {
                     className={
                       isSpecial
                         ? "text-2xl font-black uppercase tracking-[0.06em]"
-                        : "mt-1 text-2xl font-bold"
+                        : "mt-1 text-2xl font-bold max-md:text-xl"
                     }
                   >
                     {isSpecial ? category.toUpperCase() : category}
@@ -40,7 +42,7 @@ export function CategoryShowcase() {
                 {isSpecial ? null : (
                   <Link
                     href={`/shop?category=${encodeURIComponent(category)}`}
-                    className="text-xs font-black uppercase tracking-[0.14em] text-[#057429]"
+                    className="shrink-0 text-xs font-black uppercase tracking-[0.14em] text-[#057429] max-md:text-[0.62rem]"
                   >
                     View All
                   </Link>
@@ -52,8 +54,8 @@ export function CategoryShowcase() {
               <div
                 className={
                   isSpecial
-                    ? "flex gap-3 overflow-x-auto pb-[15px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-5 md:overflow-visible md:pb-0"
-                    : "flex gap-3 overflow-x-auto pb-2"
+                    ? "flex max-w-full snap-x gap-3 overflow-x-auto overscroll-x-contain pb-[15px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-5 md:overflow-visible md:pb-0"
+                    : "flex max-w-full snap-x gap-3 overflow-x-auto overscroll-x-contain pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                 }
               >
                 {items.map((item) => {
@@ -71,8 +73,8 @@ export function CategoryShowcase() {
                       href={href}
                       className={
                         isSpecial
-                          ? "group flex w-[140px] flex-[0_0_140px] flex-col overflow-hidden rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] transition duration-300 hover:-translate-y-1 hover:bg-[#F3F6F4] hover:shadow-[0_15px_35px_#E8ECE8] md:w-full md:flex-auto"
-                          : "group relative aspect-[3/4] min-w-36 overflow-hidden rounded-2xl md:min-w-52"
+                          ? "group flex w-[116px] flex-[0_0_116px] snap-start flex-col overflow-hidden rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] transition duration-300 hover:-translate-y-1 hover:bg-[#F3F6F4] hover:shadow-[0_15px_35px_#E8ECE8] sm:w-[140px] sm:flex-[0_0_140px] md:w-full md:flex-auto"
+                          : "group relative aspect-[3/4] w-[112px] flex-[0_0_112px] snap-start overflow-hidden rounded-xl sm:w-36 sm:flex-[0_0_144px] md:min-w-52 md:flex-auto md:rounded-2xl"
                       }
                     >
                       {isSpecial ? (
@@ -100,7 +102,7 @@ export function CategoryShowcase() {
                             className="object-cover transition duration-500 group-hover:scale-105"
                           />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4">
-                            <span className="text-base font-black text-white">
+                            <span className="line-clamp-2 text-base font-black text-white max-md:text-[0.7rem] max-md:leading-tight">
                               {item.name}
                             </span>
                           </div>
