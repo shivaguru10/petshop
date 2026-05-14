@@ -22,7 +22,7 @@ export function ProductGrid({
       className={
         variant === "related"
           ? "grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4"
-          : "grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
+          : "shop-product-grid grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
       }
     >
       {products.map((product) => (

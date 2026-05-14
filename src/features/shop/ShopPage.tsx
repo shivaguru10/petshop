@@ -14,7 +14,7 @@ export function ShopPage({
   const activeCategory = categories.find((item) => item.name === category);
 
   return (
-    <div className="min-w-0 bg-[#FAFAF9]">
+    <div className="shop-page min-w-0 bg-[#FAFAF9]">
       <section className="container-page py-8 max-md:py-4">
         <div className="relative overflow-hidden rounded-lg bg-[#EEF5EE] px-6 py-8 text-[#0B3221] md:px-10 max-md:px-4 max-md:py-5">
           {activeCategory ? (
@@ -42,7 +42,7 @@ export function ShopPage({
       </section>
 
       <div className="container-page grid gap-6 pb-14 lg:grid-cols-[240px_1fr] max-md:gap-4">
-        <aside className="z-30 lg:sticky lg:top-32 lg:self-start max-lg:sticky max-lg:top-[64px] max-lg:-mx-10 max-lg:bg-[#FAFAF9]/95 max-lg:px-10 max-lg:py-3 max-lg:backdrop-blur max-md:-mx-4 max-md:px-4">
+        <aside className="shop-filter z-30 lg:sticky lg:top-32 lg:self-start max-lg:bg-[#FAFAF9]/95 max-lg:py-2 max-lg:backdrop-blur">
           <div className="rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] p-4 shadow-sm max-lg:border-0 max-lg:bg-transparent max-lg:p-0 max-lg:shadow-none">
             <div className="mb-4 flex items-center justify-between border-b border-[#DDE6DD] pb-4 max-lg:mb-2 max-lg:border-0 max-lg:pb-0">
               <h2 className="text-sm font-black uppercase tracking-[0.12em]">

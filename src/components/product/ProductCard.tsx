@@ -23,7 +23,7 @@ export function ProductCard({
     <article className="group overflow-hidden rounded-lg border border-[#E6EAE6] bg-[#FFFFFF] transition hover:-translate-y-1 hover:bg-[#F3F6F4] hover:shadow-[0_18px_40px_#E8ECE8]">
       <Link href={`/product/${product.id}`} className="block">
         <div
-          className={`relative overflow-hidden bg-[#FDFEFD] ${
+          className={`product-card-media relative overflow-hidden bg-[#FDFEFD] ${
             variant === "related" ? "aspect-[4/3] md:aspect-[4/5]" : "aspect-[4/5]"
           }`}
         >
